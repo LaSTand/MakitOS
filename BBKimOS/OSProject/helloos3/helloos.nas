@@ -35,9 +35,9 @@
 
 		DB		0x0a, 0x0a		; 개행을 2개
 		DB		"HELLO~ BBKim's OS"
-		DB		0x0a			; 개행
+		DB		0x0a, 0x0d			; 개행
 		DB		"This is my OS!!"
-		DB		0x0a
+		DB		0x0a, 0x0d
 		DB		0
 
 		RESB	0x1fe-$				; 0 x001fe까지를 0x00로 채우는 명령
