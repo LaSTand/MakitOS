@@ -1,0 +1,19 @@
+CC = gcc
+
+OBJS = MySocket.o MyClient.o
+SRCS = MySocket.c MyClient.c
+
+TARGET = MyClient
+
+.SUFFIXES : .c .o
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+		  $(CC) -o $(TARGET) $(OBJS)
+
+depend:
+		gccmakedep $(SRCS)
+
+clean:
+		rm -f $(OBJS) $(TARGET)

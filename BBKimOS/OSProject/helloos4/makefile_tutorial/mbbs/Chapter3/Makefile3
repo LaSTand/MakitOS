@@ -1,0 +1,21 @@
+CC = gcc
+
+SRCS = MySocket.c MyMutex.c MySemaphore.c MyThread.c MyClient.c
+OBJS = $(SRCS:%.c=%.o)
+
+LIBS = -lpthread
+
+TARGET = MyClient
+
+.SUFFIXES : .c .o
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
+
+depend:
+	gccmakedep $(SRCS)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
